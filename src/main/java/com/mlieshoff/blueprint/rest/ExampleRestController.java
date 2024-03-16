@@ -24,12 +24,12 @@ public class ExampleRestController {
 
     private final ExampleService exampleService;
 
-    @Operation(summary = "Just display OK")
+    @Operation(summary = "Displays a list of examples")
     @ApiResponses(
             value = {
                 @ApiResponse(
                         responseCode = "200",
-                        description = "Displays a list of examples",
+                        description = "A list of examples",
                         content = {
                             @Content(
                                     mediaType = "application/json",
