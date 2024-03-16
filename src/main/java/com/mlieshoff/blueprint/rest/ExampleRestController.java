@@ -1,5 +1,7 @@
 package com.mlieshoff.blueprint.rest;
 
+import static java.util.stream.Collectors.*;
+
 import com.mlieshoff.blueprint.service.ExampleService;
 import com.mlieshoff.blueprint.service.ExampleServiceDto;
 import io.swagger.v3.oas.annotations.Operation;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")
@@ -38,12 +41,7 @@ public class ExampleRestController {
             })
     @GetMapping(value = "examples/list", produces = "application/json")
     public List<ExampleRestDto> listExamples() {
-        List<ExampleRestDto> result = new ArrayList<>();
-        for (ExampleServiceDto exampleServiceDto : exampleService.list()) {
-            result.add(
-                    ExampleRestMapper.INSTANCE.exampleServiceDtoToExampleRestDto(
-                            exampleServiceDto));
-        }
-        return result;
+        return exampleService.list().stream().map(ExampleRestMapper.INSTANCE::exampleServiceDtoToExampleRestDto)
+                .toList();
     }
 }

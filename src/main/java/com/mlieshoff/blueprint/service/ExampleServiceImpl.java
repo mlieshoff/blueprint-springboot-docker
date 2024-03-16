@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -17,11 +18,6 @@ class ExampleServiceImpl implements ExampleService {
 
     @Override
     public List<ExampleServiceDto> list() {
-        List<ExampleServiceDto> result = new ArrayList<>();
-        for (ExampleDaoDto exampleDaoDto : exampleDao.list()) {
-            result.add(
-                    ExampleServiceMapper.INSTANCE.exampleDaoDtoToExampleServiceDto(exampleDaoDto));
-        }
-        return result;
+        return exampleDao.list().stream().map(ExampleServiceMapper.INSTANCE::exampleDaoDtoToExampleServiceDto).toList();
     }
 }
