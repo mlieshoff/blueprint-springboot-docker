@@ -1,0 +1,10 @@
+<dataset>
+    <example
+            id="1"
+            value="example1"
+    />
+    <example
+            id="2"
+            value="example2"
+    />
+</dataset>
