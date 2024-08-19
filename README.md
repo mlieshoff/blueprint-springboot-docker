@@ -6,11 +6,11 @@ Blueprint application
 
 For running the application:
 
-* Docker 24.0.5
+* Docker >= 24.0.5
 
 For developing:
 
-* Maven 3.9.5
+* Maven >= 3.9.5
 * Java >= 20
 
 ## Setup
@@ -79,3 +79,32 @@ There are different kind of tests:
 * unit tests (JUnit)
 * (database) integration tests (DBUnit / Testcontainers)
 * cloud contract tests (Spring CDC / Testcontainers)
+
+## Behind a proxy like zscaler
+
+If you're behind a proxy, please use the trust all flag, with adding `--build-arg INSECURE=1` to the `docker build` 
+command, only for this demo purpose of course.
+
+## FAQ on Docker
+
+### (Linux) Socket is not reachable / Tests could not get a valid Docker environment
+
+Check that your user has been added to the docker group. The goal is, that you should be able to execute `docker` without `sudo`.
+
+Please check this one: https://docs.docker.com/engine/install/linux-postinstall/
+
+### (Windows / WSL) Socket is not reachable
+
+Where Docker daemon is running in Windows and used by the WSL is the most efficient way nowadays, it can happen that WSL 
+cannot access the sock file to use Docker. 
+
+In that case the `docker.sock` will not be on `/var/run`, or it will be some kind of invalid.
+
+Go to `/var/run` and run:
+
+`sudo rm docker.sock && sudo ln -s /mnt/wsl/docker-desktop/shared-sockets/guest-services/docker.sock /var/run/docker.sock`
+
+Note on that, the path in `/mnt` to the sock file could vary.
+
+Afterward you can run into the problem that you cannot execute Docker without `sudo`. Then simply check the instructions 
+of the step `(Linux) Socket is not reachable / Tests could not get a valid Docker environment`.
