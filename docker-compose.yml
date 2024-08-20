@@ -1,0 +1,39 @@
+services:
+  db-mariadb:
+    image: mariadb:latest
+    container_name: blueprint-maria-db
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      MARIADB_ROOT_PASSWORD: ${MARIADB_PASSWORD}
+      MARIADB_DATABASE: ${MARIADB_DB_NAME}
+    healthcheck:
+      test: [ "CMD", "healthcheck.sh", "--connect", "--innodb_initialized" ]
+      start_period: 30s
+      interval: 5s
+      timeout: 30m
+      retries: 3
+    ports:
+      - ${MARIADB_PORT_EXPOSE}:${MARIADB_PORT}
+    volumes:
+      - ${DATA_DIR}:/var/lib/mysql
+    networks:
+      - db-net
+
+  blueprint:
+    container_name: blueprint-service
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      db-mariadb:
+        condition: service_healthy
+    ports:
+      - "${SERVICE_PORT_EXPOSE}:${SERVICE_PORT}"
+    networks:
+      - db-net
+
+networks:
+  db-net:
+    driver: bridge
