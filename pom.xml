@@ -19,15 +19,16 @@
         <version.assertj>3.26.3</version.assertj>
         <version.cdc>4.1.4</version.cdc>
         <version.dbunit>2.8.0</version.dbunit>
-        <version.junit>5.11.0</version.junit>
+        <version.junit>5.10.3</version.junit>
         <version.flyway>10.17.1</version.flyway>
         <version.lombok>1.18.30</version.lombok>
         <version.lombok-mapstruct-binding>0.2.0</version.lombok-mapstruct-binding>
         <version.mapstruct>1.6.0</version.mapstruct>
         <version.mariadb-client>3.4.1</version.mariadb-client>
         <version.maven>3.9.9</version.maven>
-        <version.maven.compiler>3.12.1</version.maven.compiler>
+        <version.maven.compiler>3.13.0</version.maven.compiler>
         <version.maven.enforcer>3.5.0</version.maven.enforcer>
+        <version.maven.surefire>3.4.0</version.maven.surefire>
         <version.mockito>5.12.0</version.mockito>
         <version.openapi>2.6.0</version.openapi>
         <version.spring.cdc>4.1.4</version.spring.cdc>
@@ -212,6 +213,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <version>${version.maven.surefire}</version>
             </plugin>
         </plugins>
     </build>
