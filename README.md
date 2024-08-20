@@ -43,7 +43,7 @@ The rest API of the application is documented on the following link which can be
 
 *localhost:8080/swagger-ui/index.html*
 
-A open API compatible schema can be downloaded by GETting the link:
+An open API compatible schema can be downloaded by GETting the link:
 
 *http://localhost:8080/api-docs*
 
@@ -94,7 +94,7 @@ There are different kind of tests:
 * (database) integration tests (DBUnit / Testcontainers)
 * cloud contract tests (Spring CDC / Testcontainers)
 
-## Behind a proxy like zscaler
+## Behind a proxy like Zscaler
 
 If you're behind a proxy, please use the trust all flag, with adding `--build-arg INSECURE=1` to the `docker build` 
 command, only for this demo purpose of course.
@@ -122,3 +122,23 @@ Note on that, the path in `/mnt` to the sock file could vary.
 
 Afterward you can run into the problem that you cannot execute Docker without `sudo`. Then simply check the instructions 
 of the step `(Linux) Socket is not reachable / Tests could not get a valid Docker environment`.
+
+## Library updates
+
+Let's keep the thing up-to-date. But how to do it with all those libs?
+
+You can use Mavens built-in tools for that:
+
+Note: Be a bit careful here. I strongly suggest to not use release candidates, milestones, alpha or beta version.
+
+### Updating minor versions
+
+``mvn versions:update-parent versions:use-latest-releases versions:update-properties versions:commit -DallowMajorUpdates=false``
+
+### Updating major versions
+
+``mvn versions:update-parent versions:use-latest-releases versions:update-properties versions:commit -DallowMajorUpdates=true``
+
+### Updating plugin versions
+
+``mvn versions:display-plugin-updates -U``

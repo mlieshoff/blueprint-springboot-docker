@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.3</version>
+        <version>3.3.2</version>
         <relativePath/>
     </parent>
     <groupId>com.mlieshoff</groupId>
@@ -16,18 +16,22 @@
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
-        <version.assertj>3.25.3</version.assertj>
-        <version.cdc>4.1.1</version.cdc>
-        <version.dbunit>2.7.3</version.dbunit>
-        <version.junit>5.10.2</version.junit>
-        <version.flyway>10.10.0</version.flyway>
+        <version.assertj>3.26.3</version.assertj>
+        <version.cdc>4.1.4</version.cdc>
+        <version.dbunit>2.8.0</version.dbunit>
+        <version.junit>5.11.0</version.junit>
+        <version.flyway>10.17.1</version.flyway>
         <version.lombok>1.18.30</version.lombok>
         <version.lombok-mapstruct-binding>0.2.0</version.lombok-mapstruct-binding>
-        <version.mapstruct>1.5.5.Final</version.mapstruct>
-        <version.maridb-client>3.3.3</version.maridb-client>
-        <version.mockito>5.11.0</version.mockito>
-        <version.openapi>2.4.0</version.openapi>
-        <version.testcontainers>1.19.7</version.testcontainers>
+        <version.mapstruct>1.6.0</version.mapstruct>
+        <version.mariadb-client>3.4.1</version.mariadb-client>
+        <version.maven>3.9.9</version.maven>
+        <version.maven.compiler>3.12.1</version.maven.compiler>
+        <version.maven.enforcer>3.4.1</version.maven.enforcer>
+        <version.mockito>5.12.0</version.mockito>
+        <version.openapi>2.6.0</version.openapi>
+        <version.spring.cdc>4.1.1</version.spring.cdc>
+        <version.testcontainers>1.20.1</version.testcontainers>
     </properties>
     <dependencies>
         <!-- spring -->
@@ -84,7 +88,7 @@
         <dependency>
             <groupId>org.mariadb.jdbc</groupId>
             <artifactId>mariadb-java-client</artifactId>
-            <version>${version.maridb-client}</version>
+            <version>${version.mariadb-client}</version>
         </dependency>
 
         <!-- testing -->
@@ -151,7 +155,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <version>3.4.1</version>
+                <version>${version.maven.enforcer}</version>
                 <executions>
                     <execution>
                         <id>enforce-maven</id>
@@ -161,7 +165,7 @@
                         <configuration>
                             <rules>
                                 <requireMavenVersion>
-                                    <version>3.9.5</version>
+                                    <version>${version.maven}</version>
                                 </requireMavenVersion>
                             </rules>
                         </configuration>
@@ -171,7 +175,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.12.1</version>
+                <version>${version.maven.compiler}</version>
                 <configuration>
                     <annotationProcessorPaths>
                         <path>
@@ -199,7 +203,7 @@
             <plugin>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-contract-maven-plugin</artifactId>
-                <version>4.1.1</version>
+                <version>${version.spring.cdc}</version>
                 <extensions>true</extensions>
                 <configuration>
                     <baseClassForTests>com.mlieshoff.blueprint.base.integration.cdc.CdcBaseClass</baseClassForTests>
