@@ -19,6 +19,7 @@
         <version.assertj>3.26.3</version.assertj>
         <version.cdc>4.1.4</version.cdc>
         <version.dbunit>2.8.0</version.dbunit>
+        <!-- >= 5.11.0 breaks Surefire test class finding -->
         <version.junit>5.10.3</version.junit>
         <version.flyway>10.17.1</version.flyway>
         <version.lombok>1.18.30</version.lombok>
