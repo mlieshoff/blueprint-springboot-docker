@@ -1,4 +1,4 @@
-FROM maven:3.9.6-eclipse-temurin-17
+FROM maven:3.9.9-eclipse-temurin-21
 
 WORKDIR /app
 
@@ -8,8 +8,12 @@ ENV MAVEN_OPT=${INSECURE:+"-Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.ht
 COPY pom.xml .
 COPY src ./src
 
-RUN mvn dependency:go-offline $MAVEN_OPT
+RUN \
+    --mount=type=cache,target=/root/.m2 \
+    mvn dependency:go-offline $MAVEN_OPT
 
-RUN mvn clean package -DskipTests $MAVEN_OPT
+RUN \
+    --mount=type=cache,target=/root/.m2 \
+    mvn clean package -DskipTests $MAVEN_OPT
 
 ENTRYPOINT ["java", "-jar", "/app/target/blueprint.jar"]

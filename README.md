@@ -6,12 +6,12 @@ Blueprint application
 
 For running the application:
 
-* Docker >= 24.0.5
+* Docker >= 24.0.5 (with BuildKit enabled)
 
 For developing:
 
-* Maven >= 3.9.5
-* Java >= 20
+* Maven >= 3.9.9
+* Java >= 21
 
 ## Setup
 
@@ -28,7 +28,7 @@ Also, you can change the directory where the application stores its data via the
 
 Open a console and go to the project dir. Then execute following commands to start the application:
 
-``docker-compose build``
+``DOCKER_BUILDKIT=1 docker-compose build``
 ``docker-compose up -d``
 
 ## Stop the application
@@ -49,6 +49,10 @@ A open API compatible schema can be downloaded by GETting the link:
 
 Note: please change the port when developing to *8088*
 
+## Database
+
+The database is reachable outside of Docker on host ``localhost`` and port ``.env.MARIADB_PORT_EXPOSE``
+
 ## Logs
 
 Logs can be displayed with use of the following command:
@@ -60,6 +64,16 @@ For the database:
 For the application:
 
 ``docker logs blueprint-service``
+
+## Access the containers
+
+You can also access the container with a `bash` like:
+
+``docker exec -it blueprint-service bash``
+
+or 
+
+``docker exec -it blueprint-maria-db bash``
 
 ## Development
 

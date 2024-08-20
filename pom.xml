@@ -14,8 +14,8 @@
     <name>blueprint</name>
     <description>Blueprint is an application for something to challenge some other thing</description>
     <properties>
-        <maven.compiler.source>20</maven.compiler.source>
-        <maven.compiler.target>20</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <version.assertj>3.25.3</version.assertj>
         <version.cdc>4.1.1</version.cdc>
         <version.dbunit>2.7.3</version.dbunit>
