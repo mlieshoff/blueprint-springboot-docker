@@ -11,7 +11,7 @@ interface ExampleServiceMapper {
     ExampleServiceMapper INSTANCE = Mappers.getMapper(ExampleServiceMapper.class);
 
     /**
-     * Maps an example DAO DTO to a example service DTO.
+     * Maps an example DAO DTO to an example service DTO.
      *
      * @param exampleDaoDto the DAO DTO to map
      * @return a new created example service DTO instance.
