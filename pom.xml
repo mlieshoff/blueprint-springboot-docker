@@ -16,17 +16,17 @@
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
-        <version.assertj>3.26.3</version.assertj>
+        <version.assertj>3.27.3</version.assertj>
         <version.cdc>4.2.0</version.cdc>
         <version.checkstyle>10.21.2</version.checkstyle>
         <version.dbunit>2.8.0</version.dbunit>
         <version.junit>5.11.4</version.junit>
-        <version.flyway>10.17.1</version.flyway>
+        <version.flyway>10.22.0</version.flyway>
         <version.google-java-formatter>1.25.2</version.google-java-formatter>
         <version.lombok>1.18.30</version.lombok>
         <version.lombok-mapstruct-binding>0.2.0</version.lombok-mapstruct-binding>
-        <version.mapstruct>1.6.0</version.mapstruct>
-        <version.mariadb-client>3.4.1</version.mariadb-client>
+        <version.mapstruct>1.6.3</version.mapstruct>
+        <version.mariadb-client>3.5.1</version.mariadb-client>
         <version.maven>3.8.7</version.maven>
         <version.maven.checkstyle>3.6.0</version.maven.checkstyle>
         <version.maven.compiler>3.13.0</version.maven.compiler>
@@ -36,10 +36,10 @@
         <version.maven.spotbugs>4.8.6.6</version.maven.spotbugs>
         <version.maven.spotless>2.44.2</version.maven.spotless>
         <version.maven.surefire>3.5.2</version.maven.surefire>
-        <version.mockito>5.12.0</version.mockito>
-        <version.openapi>2.6.0</version.openapi>
-        <version.spring.cdc>4.1.4</version.spring.cdc>
-        <version.spring.test>6.1.11</version.spring.test>
+        <version.mockito>5.15.2</version.mockito>
+        <version.openapi>2.8.4</version.openapi>
+        <version.spring.cdc>4.2.0</version.spring.cdc>
+        <version.spring.test>6.2.2</version.spring.test>
         <version.testcontainers>1.20.4</version.testcontainers>
         <version.validation.api>8.0.2.Final</version.validation.api>
     </properties>
