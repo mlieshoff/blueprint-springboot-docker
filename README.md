@@ -143,6 +143,14 @@ Note: Be a bit careful here. I strongly suggest to not use release candidates, m
 
 ``mvn versions:display-plugin-updates -U``
 
+### Code Formatting
+
+To prevent formatting issues in further PR's there is *spotless* enabled by default.
+
+In any cases of formatting problems during the build you can just apply the correct formatting by:
+
+``mvn spotless::apply``
+
 ## Software Architecture
 
 ### Introduction and Goals
