@@ -29,13 +29,15 @@
         <version.mapstruct>1.6.0</version.mapstruct>
         <version.mariadb-client>3.4.1</version.mariadb-client>
         <version.maven>3.8.7</version.maven>
+        <version.maven.checkstyle>3.6.0</version.maven.checkstyle>
         <version.maven.compiler>3.13.0</version.maven.compiler>
         <version.maven.enforcer>3.5.0</version.maven.enforcer>
+        <version.maven.find-sec-bugs>1.13.0</version.maven.find-sec-bugs>
+        <version.maven.spotbugs>4.8.6.6</version.maven.spotbugs>
+        <version.maven.spotless>2.44.2</version.maven.spotless>
         <version.maven.surefire>3.4.0</version.maven.surefire>
-        <version.maven.checkstyle>3.6.0</version.maven.checkstyle>
         <version.mockito>5.12.0</version.mockito>
         <version.openapi>2.6.0</version.openapi>
-        <version.spotless>2.44.2</version.spotless>
         <version.spring.cdc>4.1.4</version.spring.cdc>
         <version.spring.test>6.1.11</version.spring.test>
         <version.testcontainers>1.20.1</version.testcontainers>
@@ -238,7 +240,7 @@
             <plugin>
                 <groupId>com.diffplug.spotless</groupId>
                 <artifactId>spotless-maven-plugin</artifactId>
-                <version>${version.spotless}</version>
+                <version>${version.maven.spotless}</version>
                 <configuration>
                     <ratchetFrom>origin/main</ratchetFrom>
                     <java>
@@ -286,6 +288,22 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>${version.maven.spotbugs}</version>
+                <configuration>
+                    <includeFilterFile>spotbugs-security-include.xml</includeFilterFile>
+                    <excludeFilterFile>spotbugs-security-exclude.xml</excludeFilterFile>
+                    <plugins>
+                        <plugin>
+                            <groupId>com.h3xstream.findsecbugs</groupId>
+                            <artifactId>findsecbugs-plugin</artifactId>
+                            <version>${version.maven.find-sec-bugs}</version>
+                        </plugin>
+                    </plugins>
+                </configuration>
             </plugin>
         </plugins>
     </build>
