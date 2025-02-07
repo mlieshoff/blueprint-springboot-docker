@@ -5,6 +5,7 @@ import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+/** This class represents an implementation of an example DAO. */
 @Component
 @RequiredArgsConstructor
 class ExampleDaoImpl implements ExampleDao {

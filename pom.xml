@@ -33,6 +33,7 @@
         <version.maven.compiler>3.13.0</version.maven.compiler>
         <version.maven.enforcer>3.5.0</version.maven.enforcer>
         <version.maven.find-sec-bugs>1.13.0</version.maven.find-sec-bugs>
+        <version.maven.pmd>3.26.0</version.maven.pmd>
         <version.maven.spotbugs>4.8.6.6</version.maven.spotbugs>
         <version.maven.spotless>2.44.2</version.maven.spotless>
         <version.maven.surefire>3.4.0</version.maven.surefire>
@@ -304,6 +305,25 @@
                         </plugin>
                     </plugins>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>${version.maven.pmd}</version>
+                <configuration>
+                    <rulesets>
+                        <ruleset>pmd-ruleset.xml</ruleset>
+                    </rulesets>
+                    <failOnViolation>true</failOnViolation>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

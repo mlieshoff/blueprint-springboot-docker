@@ -26,17 +26,16 @@ public class ExampleRestController {
      * @return a JSON list containing all available examples
      */
     @Operation(summary = "Displays a list of examples")
-    @ApiResponses(
-            value = {
-                @ApiResponse(
-                        responseCode = "200",
-                        description = "A list of examples",
-                        content = {
-                            @Content(
-                                    mediaType = "application/json",
-                                    schema = @Schema(implementation = ExampleRestDto.class))
-                        })
-            })
+    @ApiResponses({
+        @ApiResponse(
+                responseCode = "200",
+                description = "A list of examples",
+                content = {
+                    @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = ExampleRestDto.class))
+                })
+    })
     @GetMapping(value = "examples/list", produces = "application/json")
     public List<ExampleRestDto> listExamples() {
         return exampleService.list().stream()
