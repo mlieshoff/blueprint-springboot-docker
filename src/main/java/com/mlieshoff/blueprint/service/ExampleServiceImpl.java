@@ -1,11 +1,9 @@
 package com.mlieshoff.blueprint.service;
 
 import com.mlieshoff.blueprint.dao.ExampleDao;
-
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
@@ -15,6 +13,8 @@ class ExampleServiceImpl implements ExampleService {
 
     @Override
     public List<ExampleServiceDto> list() {
-        return exampleDao.list().stream().map(ExampleServiceMapper.INSTANCE::exampleDaoDtoToExampleServiceDto).toList();
+        return exampleDao.list().stream()
+                .map(ExampleServiceMapper.INSTANCE::exampleDaoDtoToExampleServiceDto)
+                .toList();
     }
 }

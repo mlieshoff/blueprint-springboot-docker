@@ -5,13 +5,12 @@ import static org.mockito.Mockito.when;
 
 import com.mlieshoff.blueprint.service.ExampleService;
 import com.mlieshoff.blueprint.service.ExampleServiceDto;
+import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import java.util.List;
 
 @ExtendWith(MockitoExtension.class)
 class ExampleRestControllerTest {

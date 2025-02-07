@@ -1,7 +1,7 @@
 package com.mlieshoff.blueprint.base.integration;
 
+import java.util.Collections;
 import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
@@ -11,8 +11,6 @@ import org.testcontainers.containers.output.Slf4jLogConsumer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.utility.DockerImageName;
-
-import java.util.Collections;
 
 @Slf4j
 @Testcontainers

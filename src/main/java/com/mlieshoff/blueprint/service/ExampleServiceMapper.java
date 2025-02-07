@@ -1,7 +1,6 @@
 package com.mlieshoff.blueprint.service;
 
 import com.mlieshoff.blueprint.dao.ExampleDaoDto;
-
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

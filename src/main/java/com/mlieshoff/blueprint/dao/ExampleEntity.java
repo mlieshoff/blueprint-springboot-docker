@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/** This class represents an entity object in the underlying data storage. */
 @Data
 @Entity(name = "example")
 @NoArgsConstructor

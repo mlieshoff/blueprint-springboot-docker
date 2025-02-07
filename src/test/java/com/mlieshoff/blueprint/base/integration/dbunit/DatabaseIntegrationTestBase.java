@@ -1,14 +1,19 @@
 package com.mlieshoff.blueprint.base.integration.dbunit;
 
-
+import static java.util.Objects.requireNonNull;
 import static org.dbunit.database.DatabaseConfig.FEATURE_QUALIFIED_TABLE_NAMES;
 
-import static java.util.Objects.requireNonNull;
-
 import com.mlieshoff.blueprint.base.integration.ContainerizedIntegrationTestBase;
-
+import java.io.InputStream;
+import java.lang.reflect.Method;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import lombok.extern.slf4j.Slf4j;
-
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.dbunit.Assertion;
@@ -28,16 +33,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestInfo;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.io.InputStream;
-import java.lang.reflect.Method;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 @Slf4j
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
@@ -195,5 +190,4 @@ public abstract class DatabaseIntegrationTestBase extends ContainerizedIntegrati
         }
         tablesNamesToDeleteFrom.clear();
     }
-
 }
