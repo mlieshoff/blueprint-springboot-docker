@@ -10,7 +10,7 @@ For running the application:
 
 For developing:
 
-* Maven >= 3.9.9
+* Maven >= 3.6.3
 * Java >= 21
 
 ## Setup
