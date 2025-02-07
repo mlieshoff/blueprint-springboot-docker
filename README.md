@@ -198,7 +198,7 @@ The goals are reflecting in two use cases:
 
 ### Building Block View
 
-#### Whitebox Overall System
+#### White-Box Overall System
 
 ```plantuml
 @startuml LAYOUT_LEFT_RIGHT
