@@ -14,13 +14,18 @@ Contract.make {
         headers {
             contentType applicationJson()
         }
-        body([
-                ["id"   : "1",
-                 "value": "example1"],
-                ["id"   : "2",
-                 "value": "example2"]
-        ]
-        )
+        body '''\
+            [
+                {
+                    "id": "1",
+                    "value": "example1"
+                },
+                {
+                    "id": "2",
+                    "value": "example2"
+                }
+            ]
+        '''
     }
     input {
         triggeredBy('checkSuccess()')
