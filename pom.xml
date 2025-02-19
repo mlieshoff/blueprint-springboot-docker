@@ -21,7 +21,7 @@
         <version.checkstyle>10.21.2</version.checkstyle>
         <version.dbunit>3.0.0</version.dbunit>
         <version.junit>5.11.4</version.junit>
-        <version.flyway>11.3.1</version.flyway>
+        <version.flyway>11.3.2</version.flyway>
         <version.google-java-formatter>1.25.2</version.google-java-formatter>
         <version.lombok>1.18.30</version.lombok>
         <version.lombok-mapstruct-binding>0.2.0</version.lombok-mapstruct-binding>
